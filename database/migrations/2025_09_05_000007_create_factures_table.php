@@ -11,7 +11,7 @@ class CreateFacturesTable extends Migration
         Schema::create('factures', function (Blueprint $table) {
             $table->id();
             $table->string('numero_facture')->unique();
-            $table->foreignId('client_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->date('date_facture');
             $table->decimal('total_ht', 15, 2)->default(0.00);
             $table->decimal('tva', 15, 2)->default(0.00);
